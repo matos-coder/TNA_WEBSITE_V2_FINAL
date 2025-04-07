@@ -34,7 +34,7 @@
         <!--Page Header End-->
 
         <!--Services Page Start-->
-        <section class="service-details">
+        <section class="service-details" id="service">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-5">
@@ -44,42 +44,42 @@
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'private-charter' }"
                                         (click)="selectService('private-charter')">
-                                        <a href="#">Private charter<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Private charter<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'tourist-travel' }"
                                         (click)="selectService('tourist-travel')">
-                                        <a href="#">Tourist Travel<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Tourist Travel<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'air-ambulance' }"
                                         (click)="selectService('air-ambulance')">
-                                        <a href="#">Air Ambulance<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Air Ambulance<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'cargo' }"
                                         (click)="selectService('cargo')">
-                                        <a href="#">Cargo<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Cargo<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'emergency-evacuation' }"
                                         (click)="selectService('emergency-evacuation')">
-                                        <a href="#">Emergency Evacuation<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Emergency Evacuation<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 
                                     <li 
                                         [ngClass]="{ 'active': selectedServiceKey === 'search-rescue' }"
                                         (click)="selectService('search-rescue')">
-                                        <a href="#">Search & Rescue<span class="fas fa-angle-right"></span></a>
+                                        <a href="#service">Search & Rescue<span class="fas fa-angle-right"></span></a>
                                     </li>
                                 </ul>
                                 
                             </div>
-                            <div class="service-details__need-help">
+                            <div class="service-details__need-help" >
                                 <div class="service-details__need-help-bg"
                                     style="background-image: url(assets/images/backgrounds/service-details-need-help-bg.jpg)">
                                 </div>
