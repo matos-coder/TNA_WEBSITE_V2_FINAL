@@ -1,0 +1,186 @@
+<div class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url(../../assets/images/backgrounds/main-slider-1-1.webp)">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>Services</h2>
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><span>/</span></li>
+                        <li><a href="services.html">Services</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+
+        <!--Services Page Start-->
+        <section class="service-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="service-details__left">
+                            <div class="service-details__category">
+                                <ul class="service-details__category-list list-unstyled">
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'private-charter' }"
+                                        (click)="selectService('private-charter')">
+                                        <a href="#">Private charter<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'tourist-travel' }"
+                                        (click)="selectService('tourist-travel')">
+                                        <a href="#">Tourist Travel<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'air-ambulance' }"
+                                        (click)="selectService('air-ambulance')">
+                                        <a href="#">Air Ambulance<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'cargo' }"
+                                        (click)="selectService('cargo')">
+                                        <a href="#">Cargo<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'emergency-evacuation' }"
+                                        (click)="selectService('emergency-evacuation')">
+                                        <a href="#">Emergency Evacuation<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                
+                                    <li 
+                                        [ngClass]="{ 'active': selectedServiceKey === 'search-rescue' }"
+                                        (click)="selectService('search-rescue')">
+                                        <a href="#">Search & Rescue<span class="fas fa-angle-right"></span></a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                            <div class="service-details__need-help">
+                                <div class="service-details__need-help-bg"
+                                    style="background-image: url(assets/images/backgrounds/service-details-need-help-bg.jpg)">
+                                </div>
+                                <div class="service-details__need-help-icon">
+                                    <a href="tel:+251 113205658"><span class="icon-phone-call"></span></a>
+                                </div>
+                                <h2 class="service-details__need-help-title">Book instantly <br> private charters
+                                    <br> services
+                                </h2>
+                                <div class="service-details__need-help-contact">
+                                    <p>Call anytime</p>
+                                    <a href="tel:+251 113205658">+251 113205658</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7" *ngIf="selectedService">
+                        <div class="service-details__right">
+                            <div class="service-details__content-box">
+                                <div class="service-details__img">
+                                    <img [ngSrc]="selectedService.image" height='451' width="770"  alt="">
+                                </div>
+                                <h3 class="service-details__title">{{ selectedService.title }}</h3>
+                                <p class="service-details__text-1">{{ selectedService.description }}</p>
+                                <div class="service-details__quote">
+                                    <p class="service-details__quote-text">{{ selectedService.quote }}</p>
+                                </div>
+                            </div>
+
+                            <div class="service-details__benefit">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="service-details__benefit-img">
+                                            <img [src]="selectedService.benefitImage" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="service-details__benefit-content">
+                                            <h4 class="service-details__benefit-title mb-4">Benefits</h4>
+                                            <ul class="list-unstyled service-details__benefit-points">
+                                                <li *ngFor="let benefit of selectedService.benefits">
+                                                    <div class="icon">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>{{ benefit }}</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--Services Page End-->
+
+        <!--Site Footer Start-->
+        <app-footer></app-footer>
+        <!--Site Footer End-->
+    </div>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="/" aria-label="logo image"><img src="../../assets/images/resources/logo-1.webp"
+                        width="143" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@tna.com.et">info&#64;tna.com.et</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+251 113205658">+251 113205658</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+</div>
