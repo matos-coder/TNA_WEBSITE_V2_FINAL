@@ -13,17 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            
             "outputPath": "dist/tna-website-v2-final",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "optimization": {
-              "scripts": true,
-              "styles": {
-                "minify": true,
-                "inlineCritical": false
-              },
-              "fonts": true
-            },
             "polyfills": [
               "zone.js"
             ],
@@ -36,13 +29,12 @@
               "src/assets"
             ],
             "styles": [
+             
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            
               "src/assets/vendors/animate/animate.min.css",
               "src/assets/vendors/animate/custom-animate.css",
               "src/assets/vendors/fontawesome/css/all.min.css",
               "src/assets/vendors/jarallax/jarallax.css",
-
               "src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css",
               "src/assets/vendors/nouislider/nouislider.min.css",
               "src/assets/vendors/nouislider/nouislider.pips.css",
@@ -59,9 +51,6 @@
               "src/assets/vendors/jquery-ui/jquery-ui.css",
               "src/assets/vendors/timepicker/timePicker.css",
               "src/assets/vendors/nice-select/nice-select.css",
-
-
-              
               "src/assets/css/jetly.css",
               "src/assets/css/jetly-responsive.css",
               "src/styles.css"
@@ -94,35 +83,55 @@
               "src/assets/vendors/nice-select/jquery.nice-select.min.js",
               "src/assets/js/jetly.js"
             ],
-            "server": "src/main.server.ts",
-            "prerender": true,
             "ssr": {
-              "entry": "server.ts"
+              "entry": "server.ts" 
             }
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true 
+                },
+                "fonts": true
+              },
+              "outputHashing": "all",
+              "sourceMap": false, 
+              "extractLicenses": true, 
               "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "3MB"
+                  "maximumError": "3MB" 
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumError": "4kB" 
                 }
               ],
-              "outputHashing": "all"
+              "ssr": true, 
+              "prerender": {
+
+                 "routes": [
+                   "/", "/about", "/contact","/team","/service","/service/private-charter",
+                   "/service/tourist-travel","/service/search-rescue","/service/charter-flight",
+                   "/service/air-ambulance","/service/cargo"
+                 ]
+              }
             },
             "development": {
-              "optimization": false,
+              "optimization": false, 
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true, 
+            
+              "ssr": false,
+              "prerender": false
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production" 
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -134,10 +143,11 @@
               "buildTarget": "TNA_WEBSITE_V2_final:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development" 
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
+          
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -148,27 +158,34 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
+              { 
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/assets" 
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css" 
             ],
-            "scripts": []
+            "scripts": [] 
           }
         },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "browserTarget": "tna-website-v2-final:build:production",
-            "serverTarget": "tna-website-v2-final:production",
-            "routes": ["/", "/about", "/contact","/team","/service","/service/private-charter","/service/tourist-travel","/service/search-rescue","/service/charter-flight","/service/air-ambulance","/service/cargo"]  
-          }
-        }
 
-      }
-    }
-  }
-}
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "TNA_WEBSITE_V2_final:build:development",
+              "serverTarget": "TNA_WEBSITE_V2_final:build:development"
+            },
+            "production": {
+              "browserTarget": "TNA_WEBSITE_V2_final:build:production",
+              "serverTarget": "TNA_WEBSITE_V2_final:build:production"
+            }
+          },
+          "defaultConfiguration": "development" 
+        }
+      } 
+    } 
+  } 
+} 
