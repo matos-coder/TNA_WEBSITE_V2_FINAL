@@ -9,7 +9,7 @@
     "test": "ng test",
     "build:prod": "ng build --configuration production",
     "prerender": "ng build --configuration production",
-    "build:netlify": "npm run prerender"
+    "build:netlify": "npm run prerender && node fix-asset-paths.js && cp _redirects dist/tna-website-v2-final/browser/"
   },
   "private": true,
   "dependencies": {

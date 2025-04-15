@@ -1,0 +1,9 @@
+# Redirect asset requests from nested routes to the root
+/*/styles-*.css /styles-:splat.css 200
+/*/main-*.js /main-:splat.js 200
+/*/polyfills-*.js /polyfills-:splat.js 200
+/*/scripts-*.js /scripts-:splat.js 200
+/*/assets/* /assets/:splat 200
+
+# Handle Angular routing
+/* /index.html 200

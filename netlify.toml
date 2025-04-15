@@ -7,3 +7,40 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Add base-href header for all HTML files
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Link = "</styles-SUCFJJIA.css>; rel=preload; as=style, </main-H6YJILMD.js>; rel=preload; as=script, </polyfills-FFHMD2TL.js>; rel=preload; as=script, </scripts-YJ6H7GIU.js>; rel=preload; as=script"
+
+# Fix asset paths for nested routes
+[[headers]]
+  for = "/*/styles-*.css"
+  [headers.values]
+    Content-Type = "text/css"
+
+[[redirects]]
+  from = "/*/styles-*.css"
+  to = "/styles-:splat.css"
+  status = 200
+
+[[redirects]]
+  from = "/*/main-*.js"
+  to = "/main-:splat.js"
+  status = 200
+
+[[redirects]]
+  from = "/*/polyfills-*.js"
+  to = "/polyfills-:splat.js"
+  status = 200
+
+[[redirects]]
+  from = "/*/scripts-*.js"
+  to = "/scripts-:splat.js"
+  status = 200
+
+[[redirects]]
+  from = "/*/assets/*"
+  to = "/assets/:splat"
+  status = 200
