@@ -158,7 +158,16 @@
             ],
             "scripts": []
           }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "tna-website-v2-final:build:production",
+            "serverTarget": "tna-website-v2-final:production",
+            "routes": ["/", "/about", "/contact","/team","/service","/service/private-charter","/service/tourist-travel","/service/search-rescue","/service/charter-flight","/service/air-ambulance","/service/cargo"]  
+          }
         }
+
       }
     }
   }
