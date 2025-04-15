@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:TNA_WEBSITE_V2_final": "node dist/tna-website-v2-final/server/server.mjs",
     "analyze": "source-map-explorer dist/tna-website-v2-final/**/*.js",
-    "prerender": "ng run tna-website:prerender"
+    "prerender": "ng run tna-website-v2-final:prerender"
   },
   "private": true,
   "dependencies": {
