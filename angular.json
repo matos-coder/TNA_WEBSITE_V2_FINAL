@@ -85,7 +85,10 @@
             ],
             "ssr": {
               "entry": "server.ts" 
-            }
+            },
+            "server": "server",
+            "prerender": true, 
+            "tsConfig": "tsconfig.app.json"
           },
           "configurations": {
             "production": {
