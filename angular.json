@@ -118,11 +118,7 @@
               "ssr": true, 
               "prerender": {
 
-                 "routes": [
-                   "/", "/about", "/contact","/team","/service","/service/private-charter",
-                   "/service/tourist-travel","/service/search-rescue","/service/charter-flight",
-                   "/service/air-ambulance","/service/cargo"
-                 ]
+                 "routesFile": "prerender-routes.txt"
               }
             },
             "development": {
