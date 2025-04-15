@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist/tna-website-v2-final/browser"
+
+# Redirect all requests to index.html for Angular's client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
